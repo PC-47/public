@@ -1,6 +1,7 @@
 # history settings
-export HISTSIZE=5000
+export HISTSIZE=10000
 export HISTFILESIZE=10000
+export HISTTIMEFORMAT="%Y-%m-%d_%H:%M:%S "
 
 # aliases
 alias ll='ls -lh --color=auto'
@@ -31,7 +32,7 @@ update_prompt() {
 PS1='\[\e[33m\]\u \[\e[34m\]\h \[\e[35m\]\w \[\e[32m\]-> \[\e[0m\]'
 
 # commands to be ran before displaying bash prompt
-PROMPT_COMMAND='update_prompt'
+PROMPT_COMMAND='update_prompt; history -a; history -c; history -r'
 
 # function to edit and re-source bashrc file
 function brc {
